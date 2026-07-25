@@ -43,62 +43,7 @@ export default function CaseIntake() {
   }
 
   return (
-    <div className="flex min-h-screen">
-      {/* Side Navigation */}
-      <aside className="h-screen w-64 flex-shrink-0 sticky left-0 top-0 bg-surface-container flex flex-col border-r border-outline-variant">
-        <div className="p-md mb-lg">
-          <div className="flex items-center gap-sm">
-            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-              <span className="material-symbols-outlined text-white text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
-                dentistry
-              </span>
-            </div>
-            <div>
-              <h1 className="font-title-sm text-title-sm font-bold text-primary">DentaFlow Lab</h1>
-              <p className="text-[10px] uppercase tracking-wider text-outline">Dental CRM</p>
-            </div>
-          </div>
-        </div>
-        <nav className="flex-1 px-sm space-y-unit">
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">dashboard</span>
-            <span className="font-body-sm text-body-sm">Dashboard</span>
-          </div>
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">groups</span>
-            <span className="font-body-sm text-body-sm">Staff CRM</span>
-          </div>
-          <div className="flex items-center gap-md px-md py-sm text-primary font-bold bg-surface-container-highest rounded-lg cursor-pointer">
-            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
-              inbox
-            </span>
-            <span className="font-body-sm text-body-sm">Case Intake</span>
-          </div>
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">precision_manufacturing</span>
-            <span className="font-body-sm text-body-sm">Production</span>
-          </div>
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">verified</span>
-            <span className="font-body-sm text-body-sm">Quality Control</span>
-          </div>
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">inventory_2</span>
-            <span className="font-body-sm text-body-sm">Inventory</span>
-          </div>
-        </nav>
-        <div className="mt-auto p-sm border-t border-outline-variant">
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">help</span>
-            <span className="font-body-sm text-body-sm">Support</span>
-          </div>
-          <div className="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer rounded-lg">
-            <span className="material-symbols-outlined">settings</span>
-            <span className="font-body-sm text-body-sm">Settings</span>
-          </div>
-        </div>
-      </aside>
-
+    <div className="flex flex-col min-h-screen">
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col min-w-0">
         {/* Top App Bar */}

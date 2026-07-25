@@ -104,10 +104,13 @@ export default function App() {
           }
         />
         <Route
-          path="/cases/intake"
+          path="/admin/cases/intake"
           element={
             <div className="min-h-screen bg-background">
-              <CaseIntake />
+              <AdminSidebar />
+              <main className="md:ml-64 min-h-screen">
+                <CaseIntake />
+              </main>
             </div>
           }
         />

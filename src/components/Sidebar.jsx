@@ -54,7 +54,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="px-md mt-auto pt-md">
-        <Link to="/cases/intake" className="block w-full mb-xl">
+        <Link to="/admin/cases/intake" className="block w-full mb-xl">
           <button className="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all">
             <span className="material-symbols-outlined">add</span>
             New Case

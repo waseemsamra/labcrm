@@ -91,7 +91,7 @@ export default function AdminSidebar() {
       </nav>
 
       <div className="mt-auto space-y-unit border-t border-outline-variant pt-lg">
-        <Link to="/cases/intake" className="block">
+        <Link to="/admin/cases/intake" className="block">
           <button className="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-sm px-md rounded font-semibold hover:opacity-90 transition-opacity mb-md">
             <span className="material-symbols-outlined text-sm">add</span>
             <span className="font-label-caps text-label-caps">New Case</span>
