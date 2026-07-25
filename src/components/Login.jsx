@@ -1,19 +1,16 @@
 import { useState } from 'react'
 
 export default function Login() {
-  const [loginType, setLoginType] = useState('lab')
-  const [email, setEmail] = useState('lab@dentallab.com')
-  const [password, setPassword] = useState('lab123')
+  const [loginType, setLoginType] = useState('practice')
+  const [email, setEmail] = useState('practice@clinic.com')
+  const [password, setPassword] = useState('practice123')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleTypeChange = (e) => {
     const type = e.target.value
     setLoginType(type)
-    if (type === 'lab') {
-      setEmail('lab@dentallab.com')
-      setPassword('lab123')
-    } else if (type === 'practice') {
+    if (type === 'practice') {
       setEmail('practice@clinic.com')
       setPassword('practice123')
     } else if (type === 'client') {
@@ -30,7 +27,7 @@ export default function Login() {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-      if (loginType === 'lab' || loginType === 'practice') {
+      if (loginType === 'practice') {
         window.location.href = '/admin'
       } else if (loginType === 'client') {
         window.location.href = '/client/Dashboard'
@@ -84,7 +81,6 @@ export default function Login() {
                     boxSizing: 'border-box',
                   }}
                 >
-                  <option value="lab">Lab</option>
                   <option value="practice">Practice</option>
                   <option value="client">Client</option>
                   <option value="technician">Technician</option>
