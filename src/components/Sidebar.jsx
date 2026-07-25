@@ -37,25 +37,33 @@ export default function Sidebar() {
           <span className="material-symbols-outlined mr-3">dashboard</span>
           Dashboard
         </Link>
-        {navItems.map((item) => (
-          <Link
-            key={item.label}
-            to={item.href}
-            className={`flex items-center px-md py-3 font-body-md transition-colors ${
-              isActive(item.href)
-                ? 'text-primary font-bold border-r-4 border-primary bg-secondary-container/20'
-                : 'text-on-surface-variant hover:bg-surface-container-high'
-            }`}
-          >
-            <span className="material-symbols-outlined mr-3">{item.icon}</span>
-            {item.label}
-            {item.badge && (
+        {navItems.map((item) =>
+          item.badge ? (
+            <div
+              key={item.label}
+              className="flex items-center px-md py-3 font-body-md text-on-surface-variant cursor-not-allowed opacity-60"
+            >
+              <span className="material-symbols-outlined mr-3">{item.icon}</span>
+              {item.label}
               <span className="ml-auto text-xs font-bold text-primary bg-primary-fixed px-1.5 py-0.5 rounded">
                 {item.badge}
               </span>
-            )}
-          </Link>
-        ))}
+            </div>
+          ) : (
+            <Link
+              key={item.label}
+              to={item.href}
+              className={`flex items-center px-md py-3 font-body-md transition-colors ${
+                isActive(item.href)
+                  ? 'text-primary font-bold border-r-4 border-primary bg-secondary-container/20'
+                  : 'text-on-surface-variant hover:bg-surface-container-high'
+              }`}
+            >
+              <span className="material-symbols-outlined mr-3">{item.icon}</span>
+              {item.label}
+            </Link>
+          )
+        )}
       </nav>
 
       <div className="px-md mt-auto pt-md">
