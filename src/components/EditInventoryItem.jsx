@@ -1,6 +1,8 @@
 import AdminSidebar from './AdminSidebar'
+import { useNavigate } from 'react-router-dom'
 
 export default function EditInventoryItem() {
+  const navigate = useNavigate()
   return (
     <div className="flex min-h-screen">
       <AdminSidebar />
@@ -52,7 +54,7 @@ export default function EditInventoryItem() {
                 <p className="text-on-surface-variant font-body-sm text-body-sm">Last updated: Oct 24, 2023 by Dr. Julian Voss</p>
               </div>
               <div className="flex items-center gap-md">
-                <button className="px-lg py-md rounded-lg border border-outline-variant text-primary font-bold hover:bg-surface-variant transition-colors">Cancel</button>
+                <button onClick={() => navigate('/admin/inventory')} className="px-lg py-md rounded-lg border border-outline-variant text-primary font-bold hover:bg-surface-variant transition-colors">Cancel</button>
                 <button className="px-lg py-md rounded-lg bg-primary text-on-primary font-bold flex items-center gap-xs hover:opacity-90 transition-opacity">
                   <span className="material-symbols-outlined">save</span>
                   Save Changes
