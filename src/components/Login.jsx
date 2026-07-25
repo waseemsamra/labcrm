@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
 export default function Login() {
-  const [loginType, setLoginType] = useState('practice')
-  const [email, setEmail] = useState('practice@clinic.com')
-  const [password, setPassword] = useState('practice123')
+  const [loginType, setLoginType] = useState('admin')
+  const [email, setEmail] = useState('admin@clinic.com')
+  const [password, setPassword] = useState('admin123')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleTypeChange = (e) => {
     const type = e.target.value
     setLoginType(type)
-    if (type === 'practice') {
-      setEmail('practice@clinic.com')
-      setPassword('practice123')
+    if (type === 'admin') {
+      setEmail('admin@clinic.com')
+      setPassword('admin123')
     } else if (type === 'client') {
       setEmail('client@practice.com')
       setPassword('client123')
@@ -27,8 +27,8 @@ export default function Login() {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-      if (loginType === 'practice') {
-        window.location.href = '/'
+      if (loginType === 'admin') {
+        window.location.href = '/admin'
       } else if (loginType === 'client') {
         window.location.href = '/client/Dashboard'
       } else if (loginType === 'technician') {
@@ -81,7 +81,7 @@ export default function Login() {
                     boxSizing: 'border-box',
                   }}
                 >
-                  <option value="practice">Practice</option>
+                  <option value="admin">Admin</option>
                   <option value="client">Client</option>
                   <option value="technician">Technician</option>
                 </select>
