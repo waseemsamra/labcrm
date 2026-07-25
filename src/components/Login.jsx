@@ -32,7 +32,7 @@ export default function Login() {
       } else if (loginType === 'client') {
         window.location.href = '/client/Dashboard'
       } else if (loginType === 'technician') {
-        window.location.href = '/'
+        window.location.href = '/dashboard'
       }
     }, 1000)
   }
