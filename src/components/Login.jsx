@@ -1,24 +1,27 @@
 import { useState } from 'react'
 
 export default function Login() {
-  const [loginType, setLoginType] = useState('admin')
-  const [email, setEmail] = useState('admin@dentallab.com')
-  const [password, setPassword] = useState('password123')
+  const [loginType, setLoginType] = useState('lab')
+  const [email, setEmail] = useState('lab@dentallab.com')
+  const [password, setPassword] = useState('lab123')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleTypeChange = (e) => {
     const type = e.target.value
     setLoginType(type)
-    if (type === 'admin') {
-      setEmail('admin@dentallab.com')
-      setPassword('password123')
+    if (type === 'lab') {
+      setEmail('lab@dentallab.com')
+      setPassword('lab123')
+    } else if (type === 'practice') {
+      setEmail('practice@clinic.com')
+      setPassword('practice123')
     } else if (type === 'client') {
       setEmail('client@practice.com')
       setPassword('client123')
-    } else if (type === 'patient') {
-      setEmail('patient@practice.com')
-      setPassword('patient123')
+    } else if (type === 'technician') {
+      setEmail('technician@dentallab.com')
+      setPassword('tech123')
     }
   }
 
@@ -27,8 +30,14 @@ export default function Login() {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-      window.location.href = '/dashboard'
-    }, 1500)
+      if (loginType === 'lab' || loginType === 'practice') {
+        window.location.href = '/admin'
+      } else if (loginType === 'client') {
+        window.location.href = '/client/Dashboard'
+      } else if (loginType === 'technician') {
+        window.location.href = '/admin'
+      }
+    }, 1000)
   }
 
   return (
@@ -75,9 +84,10 @@ export default function Login() {
                     boxSizing: 'border-box',
                   }}
                 >
-                  <option value="admin">Admin</option>
+                  <option value="lab">Lab</option>
+                  <option value="practice">Practice</option>
                   <option value="client">Client</option>
-                  <option value="patient">Patient</option>
+                  <option value="technician">Technician</option>
                 </select>
               </div>
               <div>
