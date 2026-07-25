@@ -17,7 +17,7 @@ export default function Login() {
       setEmail('client@practice.com')
       setPassword('client123')
     } else if (type === 'technician') {
-      setEmail('technician@dentallab.com')
+      setEmail('technician@clinic.com')
       setPassword('tech123')
     }
   }
@@ -32,7 +32,7 @@ export default function Login() {
       } else if (loginType === 'client') {
         window.location.href = '/client/Dashboard'
       } else if (loginType === 'technician') {
-        window.location.href = '/admin'
+        window.location.href = '/'
       }
     }, 1000)
   }
