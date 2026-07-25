@@ -4,7 +4,6 @@ export default function Login() {
   const [email, setEmail] = useState('admin')
   const [password, setPassword] = useState('password123')
   const [showPassword, setShowPassword] = useState(false)
-  const [isLabStaff, setIsLabStaff] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = (e) => {
@@ -17,150 +16,105 @@ export default function Login() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col md:flex-row">
-      {/* Left Side */}
-      <div className="relative hidden md:flex md:w-1/2 items-center justify-center overflow-hidden bg-[#00478d]">
-        <div className="relative z-10 p-8 text-white max-w-md">
-          <div className="flex items-center gap-2 mb-6">
-            <span className="material-symbols-outlined text-4xl">medical_services</span>
-            <span className="text-2xl font-bold">Clinical Precision Portal</span>
-          </div>
-          <h2 className="text-2xl font-semibold mb-4">Precision in every restoration. Excellence in every case.</h2>
-          <div className="h-1 w-16 bg-[#7af1fc] rounded-full"></div>
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f9f9ff', padding: '24px' }}>
+      <div style={{ width: '100%', maxWidth: '448px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <h1 style={{ fontSize: '30px', fontWeight: '700', color: '#00478d', marginBottom: '8px' }}>DentalLink CRM</h1>
+          <p style={{ fontSize: '16px', color: '#424752' }}>Sign in to your account</p>
         </div>
-      </div>
 
-      {/* Right Side: Login Form */}
-      <div className="flex w-full md:w-1/2 items-center justify-center p-8 bg-[#f9f9ff] min-h-screen">
-        <div className="w-full max-w-md">
-          <div className="mb-8 text-center">
-            <h1 className="text-3xl font-bold text-[#111c2c] mb-2">Sign in to your Portal</h1>
-            <p className="text-[#424752]">Access your dental lab operations and clinical cases</p>
-          </div>
-
-          <div className="flex p-1 bg-[#f0f3ff] rounded-lg mb-6 border border-[#c2c6d4]">
-            <button
-              type="button"
-              onClick={() => setIsLabStaff(true)}
-              className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${
-                isLabStaff
-                  ? 'bg-white text-[#00478d] shadow-sm ring-1 ring-black/5'
-                  : 'text-[#424752] hover:text-[#111c2c]'
-              }`}
-            >
-              Lab Staff
-            </button>
-            <button
-              type="button"
-              onClick={() => setIsLabStaff(false)}
-              className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${
-                !isLabStaff
-                  ? 'bg-white text-[#00478d] shadow-sm ring-1 ring-black/5'
-                  : 'text-[#424752] hover:text-[#111c2c]'
-              }`}
-            >
-              Dental Practice
-            </button>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <label className="text-xs font-semibold text-[#424752] uppercase tracking-wider block" htmlFor="email">
+        <div style={{ backgroundColor: '#ffffff', border: '1px solid #c2c6d4', borderRadius: '12px', padding: '32px' }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#424752', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
                 Email Address
               </label>
               <input
-                className="w-full px-4 py-2 bg-white border border-[#c2c6d4] rounded-lg text-[#111c2c] focus:outline-none focus:ring-2 focus:ring-[#005eb8] focus:border-transparent"
-                id="email"
-                name="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #c2c6d4',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  color: '#111c2c',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                }}
               />
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-semibold text-[#424752] uppercase tracking-wider block" htmlFor="password">
+
+            <div>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#424752', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
                 Password
               </label>
-              <div className="relative">
+              <div style={{ position: 'relative' }}>
                 <input
-                  className="w-full px-4 py-2 bg-white border border-[#c2c6d4] rounded-lg text-[#111c2c] focus:outline-none focus:ring-2 focus:ring-[#005eb8] focus:border-transparent"
-                  id="password"
-                  name="password"
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #c2c6d4',
+                    borderRadius: '8px',
+                    fontSize: '16px',
+                    color: '#111c2c',
+                    outline: 'none',
+                    boxSizing: 'border-box',
+                  }}
                 />
                 <button
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#424752] hover:text-[#00478d] transition-colors"
-                  onClick={() => setShowPassword(!showPassword)}
                   type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: '16px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: '#424752',
+                  }}
                 >
-                  <span className="material-symbols-outlined text-[20px]">{showPassword ? 'visibility_off' : 'visibility'}</span>
+                  <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
+                    {showPassword ? 'visibility_off' : 'visibility'}
+                  </span>
                 </button>
               </div>
             </div>
-            <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input className="h-5 w-5 cursor-pointer rounded border border-[#c2c6d4] checked:bg-[#00478d] checked:border-[#00478d]" type="checkbox" />
-                <span className="text-sm text-[#424752]">Remember Me</span>
-              </label>
-              <a className="text-sm text-[#00478d] font-medium hover:underline" href="#">
-                Forgot Password?
-              </a>
-            </div>
+
             <button
-              className="w-full bg-[#005eb8] text-white font-semibold py-2 rounded-lg hover:bg-[#00478d] transition-all flex items-center justify-center gap-2"
               type="submit"
               disabled={isLoading}
+              style={{
+                width: '100%',
+                backgroundColor: '#005eb8',
+                color: '#ffffff',
+                fontWeight: '600',
+                padding: '12px',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '16px',
+                opacity: isLoading ? 0.7 : 1,
+              }}
             >
               {isLoading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
-
-          <div className="relative my-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-[#c2c6d4]"></div>
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-[#f9f9ff] px-4 text-[#424752] font-semibold tracking-widest">Or continue with</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <button className="flex items-center justify-center gap-2 px-4 py-2 border border-[#c2c6d4] rounded-lg bg-white hover:bg-[#f0f3ff] transition-colors">
-              <svg className="h-5 w-5" viewBox="0 0 24 24">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-              </svg>
-              <span className="text-sm font-medium text-[#111c2c]">Google</span>
-            </button>
-            <button className="flex items-center justify-center gap-2 px-4 py-2 border border-[#c2c6d4] rounded-lg bg-white hover:bg-[#f0f3ff] transition-colors">
-              <svg className="h-5 w-5" viewBox="0 0 23 23">
-                <path d="M0 0h11v11H0z" fill="#f25022" />
-                <path d="M12 0h11v11H12z" fill="#7fbb00" />
-                <path d="M0 12h11v11H0z" fill="#00a4ef" />
-                <path d="M12 12h11v11H12z" fill="#ffb900" />
-              </svg>
-              <span className="text-sm font-medium text-[#111c2c]">Microsoft</span>
-            </button>
-          </div>
-
-          <div className="pt-6 border-t border-[#c2c6d4] flex flex-wrap justify-center gap-6">
-            <a className="text-xs font-semibold text-[#424752] hover:text-[#00478d] transition-colors" href="#">
-              Security Policy
-            </a>
-            <a className="text-xs font-semibold text-[#424752] hover:text-[#00478d] transition-colors" href="#">
-              Terms of Service
-            </a>
-            <a className="text-xs font-semibold text-[#424752] hover:text-[#00478d] transition-colors" href="#">
-              Privacy Policy
-            </a>
-          </div>
         </div>
+
+        <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: '#424752' }}>
+          Use <span style={{ fontWeight: '600' }}>admin</span> / <span style={{ fontWeight: '600' }}>password123</span>
+        </p>
       </div>
     </div>
   )
