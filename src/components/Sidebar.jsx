@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 export default function Sidebar() {
   const [alertsReviewed, setAlertsReviewed] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const isActive = (path) => {
     if (path === '/billing') {
@@ -60,6 +61,10 @@ export default function Sidebar() {
             New Case
           </button>
         </Link>
+        <button onClick={() => navigate('/login')} className="flex items-center gap-2 px-4 py-2 text-on-surface-variant hover:text-primary transition-colors w-full mb-2">
+          <span className="material-symbols-outlined">logout</span>
+          <span className="text-body-sm font-semibold">Logout</span>
+        </button>
         <div className="flex items-center gap-3 p-2 bg-surface-container-low rounded-lg">
           <div className="w-10 h-10 rounded-full overflow-hidden bg-outline-variant">
             <img
