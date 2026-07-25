@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-secondary-container: #006e75;
+  --color-on-secondary-fixed-variant: #004f54;
+  --color-tertiary-fixed-dim: #bfc8ce;
+  --color-on-tertiary-fixed-variant: #3f484e;
+  --color-on-primary-fixed-variant: #00468c;
+  --color-tertiary-fixed: #dbe4eb;
+  --color-background: #f9f9ff;
+  --color-on-primary: #ffffff;
+  --color-inverse-on-surface: #ebf1ff;
+  --color-tertiary: #3f484e;
+  --color-on-primary-fixed: #001b3d;
+  --color-surface-bright: #f9f9ff;
+  --color-secondary-fixed-dim: #5dd8e2;
+  --color-outline-variant: #c2c6d4;
+  --color-primary-fixed: #d6e3ff;
+  --color-on-tertiary-container: #d1dae1;
+  --color-surface-container-low: #f0f3ff;
+  --color-secondary: #006970;
+  --color-on-secondary: #ffffff;
+  --color-on-background: #111c2c;
+  --color-primary-container: #005eb8;
+  --color-inverse-primary: #a9c7ff;
+  --color-on-secondary-fixed: #002022;
+  --color-secondary-container: #7af1fc;
+  --color-error: #ba1a1a;
+  --color-on-primary-container: #c8daff;
+  --color-on-tertiary: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-outline: #727783;
+  --color-on-surface-variant: #424752;
+  --color-surface-variant: #d8e3fa;
+  --color-on-surface: #111c2c;
+  --color-primary: #00478d;
+  --color-primary-fixed-dim: #a9c7ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-inverse-surface: #263142;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-surface-container-highest: #d8e3fa;
+  --color-surface: #f9f9ff;
+  --color-tertiary-container: #576066;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee8ff;
+  --color-on-tertiary-fixed: #141d22;
+  --color-surface-tint: #005db6;
+  --color-surface-dim: #cfdaf1;
+  --color-secondary-fixed: #7df4ff;
+
+  --font-body-sm: "Inter", sans-serif;
+  --font-data-tabular: "Inter", sans-serif;
+  --font-headline-md: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-display-lg: "Inter", sans-serif;
+  --font-display-lg-mobile: "Inter", sans-serif;
+  --font-label-caps: "Inter", sans-serif;
+  --font-title-sm: "Inter", sans-serif;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-body-sm--font-weight: 400;
+
+  --text-data-tabular: 13px;
+  --text-data-tabular--line-height: 18px;
+  --text-data-tabular--font-weight: 500;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-display-lg: 36px;
+  --text-display-lg--line-height: 44px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-display-lg-mobile: 28px;
+  --text-display-lg-mobile--line-height: 34px;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
+  --text-display-lg-mobile--font-weight: 700;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.05em;
+  --text-label-caps--font-weight: 600;
+
+  --text-title-sm: 18px;
+  --text-title-sm--line-height: 24px;
+  --text-title-sm--font-weight: 600;
+
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  --spacing-lg: 24px;
+  --spacing-container-max: 1440px;
+  --spacing-xs: 4px;
+  --spacing-xl: 32px;
+  --spacing-gutter: 16px;
+  --spacing-md: 16px;
+  --spacing-sm: 8px;
+  --spacing-unit: 4px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background-color: #f9f9ff;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.status-pill {
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c2c6d4;
+  border-radius: 10px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.success-checkmark-anim {
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.custom-toggle:checked + .toggle-bg {
+  background-color: #00478d;
+}
+.custom-toggle:checked + .toggle-bg .toggle-dot {
+  transform: translateX(100%);
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
