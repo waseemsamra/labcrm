@@ -28,7 +28,7 @@ export default function Login() {
     setTimeout(() => {
       setIsLoading(false)
       if (loginType === 'practice') {
-        window.location.href = '/admin'
+        window.location.href = '/'
       } else if (loginType === 'client') {
         window.location.href = '/client/Dashboard'
       } else if (loginType === 'technician') {
