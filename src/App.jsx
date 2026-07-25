@@ -107,11 +107,7 @@ export default function App() {
           path="/cases/intake"
           element={
             <div className="min-h-screen bg-background">
-              <Sidebar />
-              <main className="md:ml-64 min-h-screen">
-                <CaseIntake />
-              </main>
-              <MobileNav />
+              <CaseIntake />
             </div>
           }
         />
