@@ -15,7 +15,7 @@ export default function Sidebar() {
   const navItems = [
     { label: 'Cases', icon: 'work', href: '/cases' },
     { label: 'Billing', icon: 'payments', href: '/billing' },
-    { label: 'Settings', icon: 'settings', href: '/settings' },
+    { label: 'Settings', icon: 'settings', href: '/settings', badge: '#' },
   ]
 
   return (
@@ -49,6 +49,11 @@ export default function Sidebar() {
           >
             <span className="material-symbols-outlined mr-3">{item.icon}</span>
             {item.label}
+            {item.badge && (
+              <span className="ml-auto text-xs font-bold text-primary bg-primary-fixed px-1.5 py-0.5 rounded">
+                {item.badge}
+              </span>
+            )}
           </Link>
         ))}
       </nav>
