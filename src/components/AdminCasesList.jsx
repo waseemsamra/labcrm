@@ -133,10 +133,12 @@ export default function AdminCasesList() {
               <span className="material-symbols-outlined">download</span>
               Export CSV
             </button>
-            <button className="flex items-center gap-sm px-lg py-md bg-primary text-on-primary rounded-lg font-title-sm text-title-sm hover:opacity-90 shadow-sm transition-all">
-              <span className="material-symbols-outlined">add_box</span>
-              New Case
-            </button>
+            <Link to="/cases/intake">
+              <button className="flex items-center gap-sm px-lg py-md bg-primary text-on-primary rounded-lg font-title-sm text-title-sm hover:opacity-90 shadow-sm transition-all">
+                <span className="material-symbols-outlined">add_box</span>
+                New Case
+              </button>
+            </Link>
           </div>
         </header>
 
