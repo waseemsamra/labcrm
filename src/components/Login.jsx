@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const [loginType, setLoginType] = useState('admin')
@@ -6,6 +7,7 @@ export default function Login() {
   const [password, setPassword] = useState('admin123')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleTypeChange = (e) => {
     const type = e.target.value
@@ -28,11 +30,11 @@ export default function Login() {
     setTimeout(() => {
       setIsLoading(false)
       if (loginType === 'admin') {
-        window.location.href = '/admin'
+        navigate('/admin')
       } else if (loginType === 'client') {
-        window.location.href = '/client/Dashboard'
+        navigate('/client/Dashboard')
       } else if (loginType === 'technician') {
-        window.location.href = '/dashboard'
+        navigate('/dashboard')
       }
     }, 1000)
   }
@@ -108,7 +110,6 @@ export default function Login() {
                   }}
                 />
               </div>
-
               <div>
                 <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#424752', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
                   Password
@@ -151,7 +152,6 @@ export default function Login() {
                   </button>
                 </div>
               </div>
-
               <button
                 type="submit"
                 disabled={isLoading}
