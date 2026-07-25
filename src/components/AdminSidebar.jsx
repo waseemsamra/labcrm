@@ -91,10 +91,12 @@ export default function AdminSidebar() {
       </nav>
 
       <div className="mt-auto space-y-unit border-t border-outline-variant pt-lg">
-        <button className="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-sm px-md rounded font-semibold hover:opacity-90 transition-opacity mb-md">
-          <span className="material-symbols-outlined text-sm">add</span>
-          <span className="font-label-caps text-label-caps">New Case</span>
-        </button>
+        <Link to="/cases/intake" className="block">
+          <button className="w-full flex items-center justify-center gap-sm bg-primary-container text-on-primary-container py-sm px-md rounded font-semibold hover:opacity-90 transition-opacity mb-md">
+            <span className="material-symbols-outlined text-sm">add</span>
+            <span className="font-label-caps text-label-caps">New Case</span>
+          </button>
+        </Link>
         <a className="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container transition-all duration-200" href="#">
           <span className="material-symbols-outlined">logout</span>
           <span className="font-label-caps text-label-caps">Logout</span>
