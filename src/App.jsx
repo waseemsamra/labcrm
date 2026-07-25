@@ -48,6 +48,7 @@ import AdminEditClient from './components/AdminEditClient'
 import AdminRoleDirectory from './components/AdminRoleDirectory'
 import AdminEditRole from './components/AdminEditRole'
 import AdminCreateRole from './components/AdminCreateRole'
+import AdminSidebar from './components/AdminSidebar'
 import Login from './components/Login'
 import { Navigate } from 'react-router-dom'
 
