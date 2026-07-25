@@ -48,11 +48,25 @@ import AdminEditClient from './components/AdminEditClient'
 import AdminRoleDirectory from './components/AdminRoleDirectory'
 import AdminEditRole from './components/AdminEditRole'
 import AdminCreateRole from './components/AdminCreateRole'
+import Login from './components/Login'
+import { Navigate } from 'react-router-dom'
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route
+          path="/login"
+          element={
+            <div className="min-h-screen bg-background">
+              <Login />
+            </div>
+          }
+        />
+        <Route
+          path="/"
+          element={<Navigate to="/login" replace />}
+        />
         <Route
           path="/"
           element={
