@@ -19,15 +19,8 @@ export default function Login() {
   return (
     <div className="flex min-h-screen flex-col md:flex-row overflow-hidden">
       {/* Left Side: Professional Background Image */}
-      <div className="relative hidden md:flex md:w-1/2 lg:w-1/2 items-center justify-center overflow-hidden">
-        <img
-          alt="Professional dental laboratory environment"
-          className="absolute inset-0 h-full w-full object-cover"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg0Cz5J4OGnmfXHEddyg86iex2C9_wvbM9frMLtv2CEnr7-sUbL6XMZCPMLSzxCxza-7yh4IfQTKYW8U98FWcO1GbikpegxMxx2hC_VCD45-QW1jX3ybzu7U-D7e1RtRQQgojga4gghRpiTgg3D5Ts0Pq-8W9Pck8UZR_QmCbmS2UrI27HDnYry0mp5DrxoqLT857mHUMuH0IVxb-q3Hs06hG5KaZlrsGnI6APDslaaNfV2QzvAGtY5fcEc3CizC4LYdyg8O44MyDK"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+      <div className="relative hidden md:flex md:w-1/2 lg:w-1/2 items-center justify-center overflow-hidden bg-primary">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-fixed"></div>
         {/* Branding Overlay Content */}
         <div className="relative z-10 p-xl text-white max-w-md">
           <div className="flex items-center gap-sm mb-lg">
