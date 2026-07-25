@@ -1,10 +1,26 @@
 import { useState } from 'react'
 
 export default function Login() {
+  const [loginType, setLoginType] = useState('admin')
   const [email, setEmail] = useState('admin@dentallab.com')
   const [password, setPassword] = useState('password123')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  const handleTypeChange = (e) => {
+    const type = e.target.value
+    setLoginType(type)
+    if (type === 'admin') {
+      setEmail('admin@dentallab.com')
+      setPassword('password123')
+    } else if (type === 'client') {
+      setEmail('client@practice.com')
+      setPassword('client123')
+    } else if (type === 'patient') {
+      setEmail('patient@practice.com')
+      setPassword('patient123')
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -40,6 +56,30 @@ export default function Login() {
 
           <div style={{ backgroundColor: '#ffffff', border: '1px solid #c2c6d4', borderRadius: '12px', padding: '32px' }}>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#424752', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+                  Login Type
+                </label>
+                <select
+                  value={loginType}
+                  onChange={handleTypeChange}
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #c2c6d4',
+                    borderRadius: '8px',
+                    fontSize: '16px',
+                    color: '#111c2c',
+                    outline: 'none',
+                    boxSizing: 'border-box',
+                  }}
+                >
+                  <option value="admin">Admin</option>
+                  <option value="client">Client</option>
+                  <option value="patient">Patient</option>
+                </select>
+              </div>
               <div>
                 <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#424752', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
                   Email Address
@@ -128,7 +168,9 @@ export default function Login() {
           </div>
 
           <p style={{ textAlign: 'center', marginTop: '24px', fontSize: '14px', color: '#424752' }}>
-            Use <span style={{ fontWeight: '600' }}>admin@dentallab.com</span> / <span style={{ fontWeight: '600' }}>password123</span>
+            Demo: <span style={{ fontWeight: '600', textTransform: 'capitalize' }}>{loginType}</span> —{' '}
+            <span style={{ fontWeight: '600' }}>{email}</span> /{' '}
+            <span style={{ fontWeight: '600' }}>{password}</span>
           </p>
         </div>
       </div>
