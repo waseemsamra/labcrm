@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function AdminSidebar() {
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <aside className="flex flex-col h-screen w-64 bg-surface-container-low border-r border-outline-variant py-lg px-md shrink-0 fixed left-0 top-0 z-40">
@@ -97,10 +98,10 @@ export default function AdminSidebar() {
             <span className="font-label-caps text-label-caps">New Case</span>
           </button>
         </Link>
-        <a className="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container transition-all duration-200" href="#">
+        <button onClick={() => navigate('/login')} className="flex items-center gap-md px-md py-sm rounded text-on-surface-variant hover:bg-surface-container transition-all duration-200 w-full text-left">
           <span className="material-symbols-outlined">logout</span>
           <span className="font-label-caps text-label-caps">Logout</span>
-        </a>
+        </button>
       </div>
     </aside>
   )
