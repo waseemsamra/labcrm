@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function Login() {
-  const [email, setEmail] = useState('admin')
+  const [email, setEmail] = useState('admin@dentallab.com')
   const [password, setPassword] = useState('password123')
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
